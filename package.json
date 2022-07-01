@@ -1,0 +1,52 @@
+{
+  "private": true,
+  "name": "dart-design-patterns",
+  "description": "The main goal of building and maintaining this website is to have a live cheat sheet of many of the most commonly used APIs in Android.",
+  "version": "0.0.1",
+  "license": "CC BY-NC-SA",
+  "repository": "https://github.com/fadi-william/dart-design-patterns",
+  "homepage": "https://fadi-william.github.io/dart-design-patterns",
+  "files": [
+    "src/",
+    "doczrc.js",
+    "tsconfig.json",
+    "package.json"
+  ],
+  "scripts": {
+    "dev": "docz dev",
+    "build": "docz build",
+    "prettier": "prettier --write \"src/**/*.{mdx,md}\" && prettier --write \"./*.md\"",
+    "commit": "npx git-cz",
+    "changelog": "conventional-changelog -i CHANGELOG.md -s -r 0",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,json,md,mdx}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.14",
+    "@emotion/styled": "^10.0.14",
+    "docz": "latest",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.4",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "prettier": "prettier/prettier"
+  }
+}
